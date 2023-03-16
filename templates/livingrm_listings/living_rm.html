@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% load humanize %}{% block content %}
+<!--listings   -->
+<div class="living-container">
+    <div class="box">
+        {% if livingrm_listings %} {% for listing in livingrm_listings %}
+        <div class="img-box">
+            <p class="offer">save ksh {{ listing.offer | intcomma }}</p>
+            <a href="{% url 'listing' listing.listing_id %}">
+                <img src="{{ listing.photo_main.url }}" alt="image" /></a>
+            <h3>{{ listing.title }}</h3>
+            <p>
+                <span class="price_old">ksh {{ listing.price_old | intcomma}}</span>
+                <span class="price_new"> ksh {{ listing.price_new | intcomma }}</span>
+            </p>
+
+            <div class="whatsapp-icon">
+                <a href=""><i class="fab fa-whatsapp"> </i> WhatsApp to order</a>
+            </div>
+        </div>
+        {% endfor %} {% else %}
+        <div class="error">
+            <p>No Listings Available</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="paginator">
+        <div class="page-button">
+            {% if livingrm_listings.has_other_pages %}
+            <div class="btn-group" role="group" aria-label="pagination">
+                {% if livingrm_listings.has_previous %}
+
+                <a href="?page={{livingrm_listings.previous_page_number}}" class="btn btn-outline-primary">&laquo;</a
+          >
+        {% endif %}
+        {% for i in livingrm_listings.paginator.page_range %} 
+        {% if livingrm_listings.number == i %}
+        <button class="btn btn-outline-primary active">
+          <span>{{i}}<span class="sr-only">(current)</span></span>
+                          </button>
+                          {% else %}
+                          <a href="?page={{i}}" class="btn btn-outline-primary">{{i}}</a>
+                </li>
+                {% endif %} {% endfor %} {% if livingrm_listings.has_next %}
+                <a href="?page={{livingrm_listings.next_page_number}}" class="btn btn-outline-primary">&raquo;</a
+          >
+        {% endif %}
+     </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{%endblock%}

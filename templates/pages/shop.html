@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="shop-container">
+  <div class="image-box">
+    <div class="box">
+      <a href="{% url 'living_rm' %}"
+        ><img
+          src="{% static 'img/sidekix-media-rYBjSLwrfdU-unsplash1.jpg' %}"
+          alt=""
+        />
+        <p>living room furniture</p>
+      </a>
+    </div>
+    <div class="box">
+      <a href="{% url 'bedroom' %}"
+        ><img
+          src="{% static 'img/kenny-eliason-iAftdIcgpFc-unsplash1.jpg' %}"
+          alt=""
+        />
+        <p>bedroom furniture</p>
+      </a>
+    </div>
+    <div class="box">
+      <a href="{% url 'dining_rm' %}"
+        ><img
+          src="{% static 'img/benjamin-child-0sT9YhNgSEs-unsplash.jpg' %}"
+          alt=""
+        />
+        <p>dining</p>
+      </a>
+    </div>
+    <div class="box">
+      <a href="{% url 'home_deco' %}"
+        ><img
+          src="{% static 'img/spacejoy-IH7wPsjwomc-unsplash1.jpg' %}"
+          alt=""
+        />
+        <p>home deco</p>
+      </a>
+    </div>
+    <div class="box">
+      <a href="{% url 'outdoor' %}"
+        ><img
+          src="{% static 'img/tungsten-rising-gJIi_W_RkYM-unsplash.jpg' %}"
+          alt=""
+        />
+        <p>outdoor furniture</p>
+      </a>
+    </div>
+    <div class="box">
+      <a href="{% url 'carbinets' %}"
+        ><img
+          src="{% static 'img/wang-john-CZ6PG4ozU9c-unsplash1.jpg' %}"
+          alt=""
+        />
+        <p>carbinets</p>
+      </a>
+    </div>
+  </div>
+</div>
+{%endblock%}

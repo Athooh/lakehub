@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% load humanize %}{% block content %}
+<div class="carbinets-container">
+    <div class="box">
+        {% if carbinets_listings %} {% for listing in carbinets_listings %}
+        <div class="img-box">
+            <p class="offer">save ksh {{listing.offer | intcomma}}</p>
+            <a href="{% url 'carb_listing' listing.listing_id %}">
+                <img src="{{ listing.photo_main.url }}" alt="image" /></a>
+            <h3>{{ listing.title }}</h3>
+            <p>
+                <span class="price_old">ksh {{ listing.price_old | intcomma}}</span>
+                <span class="price_new"> ksh {{ listing.price_new | intcomma }}</span>
+            </p>
+            <div class="whatsapp-icon">
+                <a href=""><i class="fab fa-whatsapp"> </i> WhatsApp to order</a>
+            </div>
+        </div>
+        {% endfor %} {% else %}
+        <div class="error">
+            <p>No Listings Available</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="paginator">
+        <div class="page-button">
+            {% if carbinets.has_other_pages %}
+            <div class="btn-group" role="group" aria-label="pagination">
+                {% if carbinets.has_previous %}
+
+                <a href="?page={{carbinets.previous_page_number}}" class="btn btn-outline-primary">&laquo;</a
+      >
+    {% endif %}
+    {% for i in carbinets.paginator.page_range %} 
+    {% if carbinets.number == i %}
+    <button class="btn btn-outline-primary active">
+      <span>{{i}}<span class="sr-only">(current)</span></span>
+                </button>
+                {% else %}
+                <a href="?page={{i}}" class="btn btn-outline-primary">{{i}}</a>
+                </li>
+                {% endif %} {% endfor %} {% if carbinets.has_next %}
+                <a href="?page={{carbinets.next_page_number}}" class="btn btn-outline-primary">&raquo;</a
+      >
+    {% endif %}
+</div>
+  {% endif %}
+</div>
+</div>
+</div>
+{%endblock%}

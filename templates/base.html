@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/lightbox.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lakehub Interiors</title>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo"><img src="{%static 'img/kindpng_85908.png'%}" alt="logo" /></div>
+            <div class="nav">
+                <ul>
+                    <li><a href="{% url 'index' %}">home</a></li>
+                    <li><a href="{% url 'shop' %}">shop</a></li>
+                    <li><a href="{% url 'about' %}">about us</a></li>
+                    <li><a href="{% url 'service' %}">services</a></li>
+                    <li><a href="{% url 'contact' %}">contact us</a></li>
+                </ul>
+            </div>
+            <div class="customer-rel">
+                <ul>
+                    <li><a href="">customer login</a></li>
+                </ul>
+            </div>
+            <div class="burger_menu">
+                <ul>
+                    <li><a href=""><i class="fa-solid fa-bars"></a></i>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    {% block content %}{% endblock %}
+
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/lightbox-plus-jquery.js' %}"></script>
+    <script src="{% static 'js/lightbox-plus-jquery.min.js' %}"></script>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-container">
+                <div class="logo">
+                    <img src="{%static 'img/kindpng_85908.png' %}" alt="logo" />
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur aspernatur dolorem reprehenderit vitae.
+                    </p>
+                </div>
+
+                <div class="tags">
+                    <h3>company</h3>
+                    <ul>
+                        <li><a href="{% url 'shop' %}">shop</a></li>
+
+                        <li><a href="{% url 'about' %}">about us</a></li>
+
+                        <li><a href="{% url 'contact' %}">contact us</a></li>
+                        <li><a href="{% url 'help' %}">privacy policy</a></li>
+                        <li><a href="{% url 'service' %}">affiliate programs</a></li>
+                    </ul>
+                </div>
+                <div class="shotcuts">
+                    <h3>get help</h3>
+                    <ul>
+                        <li>
+                            <a href="{% url 'help' %}">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'help' %}">shipping</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'help' %}">returns</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'help' %}">order status</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'help' %}">payment options</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="socials">
+                    <h3>Follow us:</h3>
+                    <ul>
+                        <li>
+                            <a href=""><i class="fab fa-facebook"> </i> facebook</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fab fa-whatsapp"> </i> WhatsApp</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fab fa-instagram"> </i> instagram</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fab fa-pinterest"> </i> pinterest</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fab fa-twitter"> </i> twitter</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copy">&copy; all rights reserved | AppNex limited</div>
+        </div>
+    </footer>
+</body>
+
+</html>

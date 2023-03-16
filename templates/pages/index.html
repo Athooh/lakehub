@@ -1,0 +1,107 @@
+{% extends 'base.html' %}{% load static %}{%load humanize%}{% block content %}
+<div class="section-container">
+    <div class="home-section">
+        <section class="call_to_action">
+            <a href="{% url 'shop' %}">
+                <img src="{% static 'img/PngItem_5341701.png' %}" alt="gift" />
+                <p>
+                    Gift your family and friends from these amazing offers on all our products.
+                </p>
+                <img src="{% static 'img/PngItem_5341701.png' %}" alt="gift" />
+            </a>
+        </section>
+        <div class="main-section">
+            <div class="feature">
+                <h1>Furniture that Every home deserves</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, modi architecto quam laboriosam odio veniam. Delectus eos doloribus
+                </p>
+                <div class="sale">
+                    <a href="{% url 'shop' %}">
+                        <img src="{% static 'img/PngItem_1016378.png' %}" alt="40% sale">
+
+                        <div class="feature-button">
+                            <div class="button-1">
+                                <a href="{% url 'shop' %}">buy now</a>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="feature-img">
+                <img src="{% static 'img/pngegg (36).png' %}" alt="sofa" />
+            </div>
+        </div>
+        <section class="call_to_action">
+            <a href="{% url 'shop' %}">
+                <img src="{% static 'img/kindpng_75771.png' %}" alt="" />
+                <p>
+                    Great offers on all our products | Upto 40% discounts on selected items | Happy Hunting.
+                </p>
+                <img src="{% static 'img/kindpng_75771.png' %}" alt="" />
+            </a>
+        </section>
+        <div class="minor-section">
+            <div class="minor-box">
+                <div class="section-box">
+                    <a href="{% url 'shop' %}">
+                        <h2>Why we are the best in town</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, enim eaque! Minus eveniet quaerat inventore, corrupti iusto illo reiciendis molestiae, commodi saepe nemo vero fugiat, nihil in impedit voluptatem voluptatum.
+                        </p>
+                        <img src="{% static 'img/PngItem_1016378.png' %}" alt="40% sale">
+                    </a>
+                </div>
+            </div>
+
+            <div class="minor-box">
+                <p class="sale-sticker">
+                    sale
+                </p>
+                <a href="{% url 'shop' %}">
+                    <img src="{% static 'img/pngegg (38).png' %}" alt="beds" />
+                    <div class="section-box1">
+                        <p>stylish red swivel therapy seat </p>
+                        <h2>ksh 45,000.00</h2>
+                    </div>
+                </a>
+                <div class="whatsapp-icon">
+                    <a href=""><i class="fab fa-whatsapp"> </i> WhatsApp to order</a>
+                </div>
+            </div>
+            <div class="minor-box">
+                <p class="sale-sticker">
+                    sale
+                </p>
+                <a href="{% url 'shop' %}">
+                    <img src="{% static 'img/pngegg (18).png' %}" alt="beds" />
+                    <div class="section-box1">
+                        <p>assorted glass flower vases</p>
+                        <h2>ksh 20,000.00</h2>
+                    </div>
+                </a>
+                <div class="whatsapp-icon">
+                    <a href=""><i class="fab fa-whatsapp"> </i> WhatsApp to order</a>
+                </div>
+            </div>
+            <div class="minor-box">
+                <p class="sale-sticker">
+                    sale
+                </p>
+                <a href="{% url 'shop' %}">
+                    <img src="{% static 'img/pngegg (24).png' %}" alt="beds" />
+                    <div class="section-box1">
+                        <p>stylish round gold plated table with glass top</p>
+                        <h2>ksh 30,000.00</h2>
+                    </div>
+                </a>
+                <div class="whatsapp-icon">
+                    <a href=""><i class="fab fa-whatsapp"> </i> WhatsApp to order</a>
+                </div>
+            </div>
+        </div>
+        </section>
+    </div>
+</div>
+{% endblock %}

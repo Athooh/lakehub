@@ -1,0 +1,114 @@
+{% extends 'base.html' %}{% load humanize %}{% load static %}{% block content%}
+<div class="slide-container">
+  <div class="slide-box">
+    <p class="offer">save {{outdoor_listing.offer | intcomma}}</p>
+    <a
+      href="{{ outdoor_listing.photo_main.url }}"
+      data-lightbox="furniture"
+      data-title="{{ outdoor_listing.title }}"
+      ><img src="{{ outdoor_listing.photo_main.url }}" alt="..." id="featured"
+    /></a>
+    <div id="slide-wrapper">
+      <div id="slider">
+        <a
+          href="{{ outdoor_listing.photo_1.url }}"
+          data-lightbox="furniture"
+          data-title="{{ outdoor_listing.title }}"
+          ><img src="{{ outdoor_listing.photo_1.url }}" alt="..."
+        /></a>
+        <a
+          href="{{ outdoor_listing.photo_2.url}}"
+          data-lightbox="furniture"
+          data-title="{{ outdoor_listing.title }}"
+          ><img src="{{ outdoor_listing.photo_2.url }}" alt="..."
+        /></a>
+        <a
+          href="{{ outdoor_listing.photo_3.url}}"
+          data-lightbox="furniture"
+          data-title="{{ outdoor_listing.title }}"
+          ><img src="{{ outdoor_listing.photo_3.url }}" alt="..."
+        /></a>
+        <a
+          href="{{ outdoor_listing.photo_4.url}}"
+          data-lightbox="furniture"
+          data-title="{{ outdoor_listing.title }}"
+          ><img src="{{ outdoor_listing.photo_4.url }}" alt="..."
+        /></a>
+        <a
+          href="{{ outdoor_listing.photo_5.url}}"
+          data-lightbox="furniture"
+          data-title="{{ outdoor_listing.title }}"
+          ><img src="{{ outdoor_listing.photo_5.url }}" alt="..."
+        /></a>
+      </div>
+    </div>
+  </div>
+  <div class="price-description">
+    <div class="menu-back">
+      <ul>
+        <li><a href="{% url 'index' %}">home</a></li>
+        <li><a href="{% url 'shop' %}">/ shop</a></li>
+        <li><a href="{% url 'outdoor' %}">/ outdoor</a></li>
+      </ul>
+    </div>
+    <div class="price">
+      <h2>{{outdoor_listing.title}}</h2>
+      <!-- <p class="new-price">-->
+      <span class="price_old"
+        >KSH {{ outdoor_listing.price_old | intcomma}}</span
+      >
+      <span class="price_new">
+        KSH {{ outdoor_listing.price_new | intcomma }}</span
+      >
+      <!--</p>-->
+      <div class="cart-whatsapp">
+        <button><a href="">add to cart</a></button>
+        <div class="whatsapp-icon">
+          <a href=""><i class="fab fa-whatsapp"> WhatsApp to order</i> </a>
+        </div>
+      </div>
+      <p>
+        Home / Office Delivary is only available in Nairobi and Mombasa within
+        City Limits
+      </p>
+      <hr />
+      <p>LRU:{{outdoor_listing.product_code}}</p>
+      <hr />
+      <p>Category: <span>{{outdoor_listing.category}}</span></p>
+      <hr />
+    </div>
+    <div class="description">
+      <h2>description:</h2>
+      <p>{{outdoor_listing.description}}</p>
+      <h2>specifications</h2>
+      <p><span>assembled size </span>- {{outdoor_listing.assembled_size}}</p>
+      <p><span>structured frame: </span>{{outdoor_listing.structured_frame}}</p>
+      <p><span>assembly: </span>{{ outdoor_listing.assembly }}</p>
+      <p><span>made in: </span>{{outdoor_listing.made_in_location}}</p>
+    </div>
+    <div class="tags">
+      <p>Follow us:</p>
+      <ul>
+        <li>
+          <a href=""><i class="fab fa-whatsapp"></i> </a>
+        </li>
+        <li>
+          <a href=""><i class="fab fa-instagram"></i> </a>
+        </li>
+        <li>
+          <a href=""><i class="fab fa-pinterest"></i> </a>
+        </li>
+        <li>
+          <a href=""><i class="fab fa-twitter"></i> </a>
+        </li>
+        <li>
+          <a href=""><i class="fab fa-facebook"></i> </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{%endblock%} {% block scripts %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

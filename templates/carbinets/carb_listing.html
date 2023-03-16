@@ -1,0 +1,112 @@
+{% extends 'base.html' %}{% load humanize %}{% load static %}{% block content%}
+<div class="slide-container">
+  <div class="slide-box">
+    <p class="offer">save {{carb_listing.offer | intcomma}}</p>
+    <a
+      href="{{ carb_listing.photo_main.url }}"
+      data-lightbox="furniture"
+      data-title="{{ carb_listing.title }}"
+      ><img src="{{ carb_listing.photo_main.url }}" alt="..." id="featured"
+    /></a>
+    <div id="slide-wrapper">
+      <div id="slider">
+        <a
+          href="{{ carb_listing.photo_1.url }}"
+          data-lightbox="furniture"
+          data-title="{{ carb_listing.title }}"
+          ><img src="{{ carb_listing.photo_1.url }}" alt="..."
+        /></a>
+        <a
+          href="{{ carb_listing.photo_2.url}}"
+          data-lightbox="furniture"
+          data-title="{{ carb_listing.title }}"
+          ><img src="{{ carb_listing.photo_2.url }}" alt="..."
+        /></a>
+        <a
+          href="{{ carb_listing.photo_3.url}}"
+          data-lightbox="furniture"
+          data-title="{{ carb_listing.title }}"
+          ><img src="{{ carb_listing.photo_3.url }}" alt="..."
+        /></a>
+        <a
+          href="{{ carb_listing.photo_4.url}}"
+          data-lightbox="furniture"
+          data-title="{{ carb_listing.title }}"
+          ><img src="{{ carb_listing.photo_4.url }}" alt="..."
+        /></a>
+        <a
+          href="{{ carb_listing.photo_5.url}}"
+          data-lightbox="furniture"
+          data-title="{{ carb_listing.title }}"
+          ><img src="{{ carb_listing.photo_5.url }}" alt="..."
+        /></a>
+      </div>
+    </div>
+  </div>
+  <div class="price-description">
+    <div class="menu-back">
+      <ul>
+        <li><a href="{% url 'index' %}">home</a></li>
+        <li><a href="{% url 'shop' %}">/ shop</a></li>
+        <li><a href="{% url 'carbinets' %}">/ carbinets</a></li>
+      </ul>
+    </div>
+    <div class="price">
+      <h2>{{carb_listing.title}}</h2>
+      <!-- <p class="new-price">-->
+      <span class="price_old">KSH {{ carb_listing.price_old | intcomma}}</span>
+      <span class="price_new">
+        KSH {{ carb_listing.price_new | intcomma }}</span
+      >
+      <!--</p>-->
+      <div class="cart-whatsapp">
+        <button><a href="">add to cart</a></button>
+        <div class="whatsapp-icon">
+          <a href=""><i class="fab fa-whatsapp"> WhatsApp to order</i> </a>
+        </div>
+      </div>
+      <p>
+        Home / Office Delivary is only available in Nairobi and Mombasa within
+        City Limits
+      </p>
+      <hr />
+      <p>LRU:{{carb_listing.product_code}}</p>
+      <hr />
+      <p>Category: <span>{{carb_listing.category}}</span></p>
+      <hr />
+    </div>
+    <div class="description">
+      <h2>description:</h2>
+      <p>{{carb_listing.description}}</p>
+      <h2>specifications</h2>
+      <p><span>assembled size </span>- {{carb_listing.assembled_size}}</p>
+      <p><span>structured frame: </span>{{carb_listing.structured_frame}}</p>
+      <p><span>assembly: </span>{{ carb_listing.assembly }}</p>
+      <p><span>made in: </span>{{carb_listing.made_in_location}}</p>
+    </div>
+    <div class="tags">
+      <p>Follow us:</p>
+      <ul>
+        <li>
+          <a href=""><i class="fab fa-whatsapp"></i> </a>
+        </li>
+        <li>
+          <a href=""><i class="fab fa-instagram"></i> </a>
+        </li>
+        <li>
+          <a href=""><i class="fab fa-pinterest"></i> </a>
+        </li>
+        <li>
+          <a href=""><i class="fab fa-twitter"></i> </a>
+        </li>
+        <li>
+          <a href=""><i class="fab fa-facebook"></i> </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{%endblock%} {% block scripts %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% load humanize %}{% block content %}
+<!--listings   -->
+<div class="homedeco-container">
+    <div class="box">
+        {% if home_deco %} {% for listing in home_deco %}
+        <div class="img-box">
+            <p class="offer">save ksh {{ listing.offer | intcomma }}</p>
+            <a href="{% url 'deco_list' listing.listing_id %}">
+                <img src="{{ listing.photo_main.url }}" alt="image" /></a>
+            <h3>{{ listing.title }}</h3>
+            <p>
+                <span class="price_old">ksh {{ listing.price_old | intcomma}}</span>
+                <span class="price_new"> ksh {{ listing.price_new | intcomma }}</span>
+            </p>
+
+            <div class="whatsapp-icon">
+                <a href=""><i class="fab fa-whatsapp"> </i> WhatsApp to order</a>
+            </div>
+        </div>
+        {% endfor %} {% else %}
+        <div class="error">
+            <p>No Listings Available</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="paginator">
+        <div class="page-button">
+            {% if home_deco.has_other_pages %}
+            <div class="btn-group" role="group" aria-label="pagination">
+                {% if home_deco.has_previous %}
+
+                <a href="?page={{home_deco.previous_page_number}}" class="btn btn-outline-primary">&laquo;</a
+          >
+        {% endif %}
+        {% for i in home_deco.paginator.page_range %} 
+        {% if home_deco.number == i %}
+        <button class="btn btn-outline-primary active">
+          <span>{{i}}<span class="sr-only">(current)</span></span>
+                          </button>
+                          {% else %}
+                          <a href="?page={{i}}" class="btn btn-outline-primary">{{i}}</a>
+                </li>
+                {% endif %} {% endfor %} {% if home_deco.has_next %}
+                <a href="?page={{home_deco.next_page_number}}" class="btn btn-outline-primary">&raquo;</a
+          >
+        {% endif %}
+    </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{%endblock%}
