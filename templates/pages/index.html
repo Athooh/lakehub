@@ -1,6 +1,19 @@
 {% extends 'base.html' %}{% load static %}{%load humanize%}{% block content %}
 <div class="section-container">
+    <div class="category_links">
+        <ul>
+            <li><a href="{% url 'living_rm' %}">LIVING ROOM</a></li>
+            <li><a href="{% url 'bedroom' %}">BEDROOM</a></li>
+            <li><a href="{% url 'dining_rm' %}">DINING </a></li>
+            <li><a href="{% url 'carbinets' %}">CARBINETS</a></li>
+            <li><a href="{% url 'home_deco' %}">HOME DECO</a></li>
+            <li><a href="{% url 'outdoor' %}">OUTDOOR</a></li>
+            <li><a href="{% url 'living_rm' %}">OFFICE</a></li>
+            <li><a href="{% url 'living_rm' %}">KIDS ROOM</a></li>
+        </ul>
+    </div>
     <div class="home-section">
+        <!--
         <section class="call_to_action">
             <a href="{% url 'shop' %}">
                 <img src="{% static 'img/PngItem_5341701.png' %}" alt="gift" />
@@ -10,6 +23,7 @@
                 <img src="{% static 'img/PngItem_5341701.png' %}" alt="gift" />
             </a>
         </section>
+    -->
         <div class="main-section">
             <div class="feature">
                 <h1>Furniture that Every home deserves</h1>
@@ -59,7 +73,7 @@
                 <p class="sale-sticker">
                     sale
                 </p>
-                <a href="{% url 'shop' %}">
+                <a href="{% url 'outdoor' %}">
                     <img src="{% static 'img/pngegg (38).png' %}" alt="beds" />
                     <div class="section-box1">
                         <p>stylish red swivel therapy seat </p>
@@ -74,7 +88,7 @@
                 <p class="sale-sticker">
                     sale
                 </p>
-                <a href="{% url 'shop' %}">
+                <a href="{% url 'home_deco' %}">
                     <img src="{% static 'img/pngegg (18).png' %}" alt="beds" />
                     <div class="section-box1">
                         <p>assorted glass flower vases</p>
@@ -89,7 +103,7 @@
                 <p class="sale-sticker">
                     sale
                 </p>
-                <a href="{% url 'shop' %}">
+                <a href="{% url 'living_rm' %}">
                     <img src="{% static 'img/pngegg (24).png' %}" alt="beds" />
                     <div class="section-box1">
                         <p>stylish round gold plated table with glass top</p>
