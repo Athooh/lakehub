@@ -272,15 +272,15 @@ nav .container .customer-rel a:hover {
 
 .minor-section .minor-box .whatsapp-icon a {
   background-color: white;
-  color: red;
-  font-weight: bold;
+  color: rgb(14, 102, 116);
+  font-weight: 400;
   padding: 10px;
   border-radius: 20px;
   box-shadow: 0 3px 5px 0 rgb(63, 63, 63);
 }
 
 .minor-section .minor-box .whatsapp-icon a:hover {
-  border: solid gray;
+  border: gray;
 }
 
 .minor-section .minor-box img {
