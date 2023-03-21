@@ -1,18 +1,7 @@
-{% extends 'base.html' %} {% load humanize %}{% block content %}
+{% extends 'base.html' %} {% load static %}{% load humanize %}{% block content %}
 <!--listings   -->
 <div class="dining-container">
-    <div class="category_links">
-        <ul>
-            <li><a href="{% url 'living_rm' %}">LIVING ROOM</a></li>
-            <li><a href="{% url 'bedroom' %}">BEDROOM</a></li>
-            <li><a href="{% url 'dining_rm' %}">DINING </a></li>
-            <li><a href="{% url 'carbinets' %}">CARBINETS</a></li>
-            <li><a href="{% url 'home_deco' %}">HOME DECO</a></li>
-            <li><a href="{% url 'outdoor' %}">OUTDOOR</a></li>
-            <li><a href="{% url 'living_rm' %}">OFFICE</a></li>
-            <li><a href="{% url 'living_rm' %}">KIDS ROOM</a></li>
-        </ul>
-    </div>
+
     <div class="box">
         {% if dining_listings %} {% for listing in dining_listings %}
         <div class="img-box">

@@ -7,16 +7,14 @@ from .models import CarbinetsListing
 def index(request):
     carbinets_listings = CarbinetsListing.objects.all()
     
-    #paginator = Paginator(carbinets_listings, 6)
-    #page = request.GET.get('page')
-    #paged_listings = paginator.get_page(page)
+    paginator = Paginator(carbinets_listings, 6)
+    page = request.GET.get('page')
+    paged_listings = paginator.get_page(page)
     
-    #context = {
-    #    'carbinets_listings': paged_listings
-    #}
     context = {
-        'carbinets_listings': carbinets_listings
+       'carbinets_listings': paged_listings
     }
+   
     return render(request, 'carbinets/carbinets.html', context)
 
 def carb_listing(request, listing_id):

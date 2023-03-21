@@ -7,15 +7,13 @@ from .models import BedroomListing
 def index(request):
     br_listings = BedroomListing.objects.all()
     
-    # paginator = Paginator(br_listings, 6)
-    # page = request.GET.get('page')
-    # paged_listings = paginator.get_page(page)
+    paginator = Paginator(br_listings, 6)
+    page = request.GET.get('page')
+    paged_listings = paginator.get_page(page)
     
-    # context = {
-    #        'br_listings': paged_listings
-    #}
     context = {
-        'br_listings':br_listings
+           'br_listings': paged_listings
+    
     }
     return render(request, 'bedroom_listings/bed_rm.html', context)
 

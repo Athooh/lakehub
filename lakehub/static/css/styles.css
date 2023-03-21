@@ -99,17 +99,59 @@ nav .container .customer-rel a:hover {
   color: rgb(38, 145, 132);
 }
 
-.burger_menu {
+/* Style the navigation menu 
+
+.topnav {
+  width: 100%;
+  overflow: hidden;
+  background-color: rgb(58, 155, 144);
+  position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) 
+
+.topnav #myLinks {
   display: none;
-  font-size: 22px;
 }
 
-.burger_menu ul {
-  list-style: none;
+.topnav .active img {
+  width: 200px;
 }
 
-.burger_menu a {
-  color: #fff;
+/* Style navigation menu links 
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 17px;
+  display: block;
+  background: rgb(14, 102, 116);
+}
+
+/* Style the hamburger menu 
+
+.topnav a.icon {
+  background: rgb(14, 102, 116);
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+/* Add a grey background color on mouse-over 
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active link (or home/logo) 
+
+.active {
+  background-color: rgb(14, 102, 116);
+  color: white;
 }
 
 /* end of nav-area */
@@ -129,8 +171,8 @@ nav .container .customer-rel a:hover {
 }
 
 .main-section .feature {
+  height: 98%;
   margin-left: 50px;
-  padding: 20px;
   width: 50%;
 }
 
